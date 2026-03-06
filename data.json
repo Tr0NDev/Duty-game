@@ -1,0 +1,45 @@
+{
+	"flagroundneed": 5,
+
+	"unit": {
+		"unit1": {
+			"cost": 300,
+			"atk": 3,
+			"max_hp": 99,
+			"attack_range": 2,
+			"movement_range": 3,
+			"ammo": 10,
+			"canclimb": true,
+			"canattackground": true,
+			"canattackair": false,
+			"canattackwater": true,
+			"quickattack": true
+		},
+		"light_tank": {
+			"cost": 600,
+			"atk": 5,
+			"max_hp": 100,
+			"attack_range": 1,
+			"movement_range": 3,
+			"ammo": 10,
+			"canclimb": false,
+			"canattackground": true,
+			"canattackair": false,
+			"canattackwater": true,
+			"quickattack": true
+		},
+		"artillery": {
+			"cost": 600,
+			"atk": 10,
+			"max_hp": 100,
+			"attack_range": 3,
+			"movement_range": 3,
+			"ammo": 10,
+			"canclimb": false,
+			"canattackground": true,
+			"canattackair": false,
+			"canattackwater": true,
+			"quickattack": false
+		}
+	}
+}
