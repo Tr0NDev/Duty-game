@@ -1,0 +1,98 @@
+[gd_scene load_steps=15 format=4 uid="uid://ktm0kn32rg3o"]
+
+[ext_resource type="Script" uid="uid://dj7ewdcvn3vse" path="res://monde/monde.gd" id="1_471r3"]
+[ext_resource type="Texture2D" uid="uid://bqvnxts8o0odk" path="res://sprite/allsprite.png" id="2_wacni"]
+[ext_resource type="Script" uid="uid://cje1y8i2o3yph" path="res://monde/tile_map_layer.gd" id="3_u0qq4"]
+[ext_resource type="Texture2D" uid="uid://j1pmyg1s1vvb" path="res://sprite/contour.png" id="4_fguuq"]
+[ext_resource type="Script" uid="uid://cb7sl48ebabt8" path="res://monde/tile_map_layer_2.gd" id="5_ehra8"]
+[ext_resource type="Texture2D" uid="uid://vei0hsbmevni" path="res://sprite/mov.png" id="6_u0qq4"]
+[ext_resource type="Script" uid="uid://ckcgbnblre3p3" path="res://monde/tile_map_mov.gd" id="7_fguuq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdubu"]
+texture = ExtResource("2_wacni")
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, -4)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -4, -8, 0, 0, 4, 8, 0)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, -4)
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -4, -8, 0, 0, 4, 8, 0)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, -4)
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -4, -8, 0, 0, 4, 8, 0)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -4)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -4, -8, 0, 0, 4, 8, 0)
+
+[sub_resource type="TileSet" id="TileSet_kdubu"]
+tile_shape = 1
+tile_layout = 4
+tile_size = Vector2i(16, 8)
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_kdubu")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
+texture = ExtResource("4_fguuq")
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -4)
+
+[sub_resource type="TileSet" id="TileSet_rj586"]
+tile_shape = 1
+tile_layout = 4
+tile_size = Vector2i(16, 8)
+sources/0 = SubResource("TileSetAtlasSource_0hol4")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ehra8"]
+texture = ExtResource("6_u0qq4")
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -4)
+
+[sub_resource type="TileSet" id="TileSet_3gnbp"]
+tile_shape = 1
+tile_layout = 4
+tile_size = Vector2i(16, 8)
+sources/0 = SubResource("TileSetAtlasSource_ehra8")
+
+[sub_resource type="GDScript" id="GDScript_u0qq4"]
+
+[node name="monde" type="Node2D"]
+script = ExtResource("1_471r3")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(0, -8)
+tile_map_data = PackedByteArray("AAD//wEAAgABAAAAAAD//wAAAgABAAAAAAD/////AgABAAAAAAAAAAAAAgADAAAAAAAAAP//AgABAAAAAAAAAAEAAgABAAAAAAABAAAAAgABAAAAAAABAAEAAgABAAAAAAABAP//AgABAAAAAAD9/wAAAgACAAAAAAD+/wAAAgABAAAAAAD+////AgABAAAAAAD+//7/AgACAAAAAAD///3/AgABAAAAAAD///z/AgACAAAAAAAAAPv/AgABAAAAAAAAAPr/AgACAAAAAAAAAPz/AgABAAAAAAAAAP3/AgABAAAAAAABAPz/AgACAAAAAAABAPv/AgACAAAAAAABAP3/AgABAAAAAAAAAP7/AgABAAAAAAD///7/AgABAAAAAAABAP7/AgABAAAAAAACAP3/AgACAAAAAAACAP7/AgACAAAAAAACAP//AgABAAAAAAACAAAAAgABAAAAAAADAAAAAgACAAAAAAACAAEAAgABAAAAAAADAP//AgACAAAAAAADAAEAAgACAAAAAAACAAIAAgACAAAAAAABAAIAAgABAAAAAAAAAAIAAgABAAAAAAD//wIAAgABAAAAAAD+/wIAAgACAAAAAAD+/wEAAgABAAAAAAD//wMAAgABAAAAAAAAAAMAAgABAAAAAAABAAMAAgABAAAAAAD//wQAAgACAAAAAAACAAMAAgACAAAAAAABAAQAAgACAAAAAAAAAAQAAgABAAAAAAAAAAUAAgABAAAAAAABAAUAAgACAAAAAAAAAAYAAgACAAAAAAD9/wEAAgACAAAAAAD+/wMAAgACAAAAAAD//wUAAgACAAAAAAAAAAcAAgACAAAAAAAAAPn/AgACAAAAAAD///v/AgACAAAAAAD+//3/AgACAAAAAAD9////AgACAAAAAAA=")
+tile_set = SubResource("TileSet_kdubu")
+script = ExtResource("3_u0qq4")
+
+[node name="TileMap_Hover" type="TileMapLayer" parent="."]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(0, -8)
+tile_set = SubResource("TileSet_rj586")
+script = ExtResource("5_ehra8")
+
+[node name="TileMap_Mov" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_set = SubResource("TileSet_3gnbp")
+script = ExtResource("7_fguuq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(10, 10)
+
+[node name="Units" type="Node2D" parent="."]
+
+[node name="Stats" type="Panel" parent="."]
+offset_left = -58.0
+offset_top = 22.0
+offset_right = -25.0
+offset_bottom = 33.0
+script = SubResource("GDScript_u0qq4")
+
+[node name="Info" type="Label" parent="Stats"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = -14.0
+offset_right = 49.0
+offset_bottom = 9.0

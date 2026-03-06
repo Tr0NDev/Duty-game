@@ -1,0 +1,301 @@
+[gd_scene load_steps=40 format=4 uid="uid://ktm0kn32rg3o"]
+
+[ext_resource type="Script" uid="uid://dj7ewdcvn3vse" path="res://monde/monde.gd" id="1_471r3"]
+[ext_resource type="Texture2D" uid="uid://duuaiu61yhww4" path="res://sprite/test.png" id="2_w5dui"]
+[ext_resource type="Texture2D" uid="uid://d2w8mi4qc0kca" path="res://sprite/forest.png" id="3_mlspi"]
+[ext_resource type="Script" uid="uid://cje1y8i2o3yph" path="res://monde/tile_map_layer.gd" id="3_u0qq4"]
+[ext_resource type="Texture2D" uid="uid://dkivvagmuegpm" path="res://sprite/contour.png" id="4_fguuq"]
+[ext_resource type="Texture2D" uid="uid://dk02dnuvct7fh" path="res://sprite/grass.png" id="4_j4g3w"]
+[ext_resource type="Script" uid="uid://cb7sl48ebabt8" path="res://monde/tile_map_layer_2.gd" id="5_ehra8"]
+[ext_resource type="Texture2D" uid="uid://ssh31ce63uoi" path="res://sprite/water.png" id="5_i37qo"]
+[ext_resource type="Texture2D" uid="uid://cdb1x8x800wen" path="res://sprite/mov.png" id="6_u0qq4"]
+[ext_resource type="Script" uid="uid://ckcgbnblre3p3" path="res://monde/tile_map_mov.gd" id="7_fguuq"]
+[ext_resource type="Texture2D" uid="uid://uh1qgxjlllph" path="res://sprite/attck.png" id="8_3gnbp"]
+[ext_resource type="Script" uid="uid://b72lox67oglsc" path="res://monde/stats.gd" id="8_fguuq"]
+[ext_resource type="Script" uid="uid://dviejx4offga3" path="res://monde/camera_2d.gd" id="10_3aq36"]
+[ext_resource type="Texture2D" uid="uid://diltrkef71871" path="res://sprite/unit1_ld.png" id="12_8o2ox"]
+[ext_resource type="Texture2D" uid="uid://uwgvhiwjvdyt" path="res://sprite/building.png" id="12_o8tlm"]
+[ext_resource type="Texture2D" uid="uid://eyvha0oq3rkn" path="res://sprite/unit1_rd.png" id="13_rbbuc"]
+[ext_resource type="Script" uid="uid://dxevbpb4tf0gc" path="res://monde/panel.gd" id="14_mlspi"]
+[ext_resource type="Script" uid="uid://dr1eihlvreymt" path="res://monde/tile_map_unit.gd" id="14_qftrn"]
+[ext_resource type="Script" uid="uid://bp6r7q1f5l1cy" path="res://monde/info_globale.gd" id="15_i37qo"]
+[ext_resource type="Script" uid="uid://c4f0ywu677qil" path="res://monde/passturn.gd" id="16_i37qo"]
+[ext_resource type="Script" uid="uid://bytjthrrl3ou2" path="res://monde/building_panel.gd" id="17_2qu4f"]
+[ext_resource type="Script" uid="uid://glnpb52na1fn" path="res://monde/debug.gd" id="18_lfqh6"]
+[ext_resource type="Script" uid="uid://bb88ng5qfqyyk" path="res://monde/management.gd" id="19_2qu4f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3chjk"]
+texture = ExtResource("2_w5dui")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2qu4f"]
+texture = ExtResource("4_j4g3w")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8tlm"]
+texture = ExtResource("3_mlspi")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i37qo"]
+texture = ExtResource("5_i37qo")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -16)
+
+[sub_resource type="TileSet" id="TileSet_kdubu"]
+tile_shape = 1
+tile_layout = 4
+tile_size = Vector2i(64, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_3chjk")
+sources/3 = SubResource("TileSetAtlasSource_o8tlm")
+sources/2 = SubResource("TileSetAtlasSource_2qu4f")
+sources/4 = SubResource("TileSetAtlasSource_i37qo")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w5dui"]
+texture = ExtResource("4_fguuq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -16)
+
+[sub_resource type="TileSet" id="TileSet_rj586"]
+tile_shape = 1
+tile_layout = 4
+tile_size = Vector2i(64, 32)
+sources/0 = SubResource("TileSetAtlasSource_w5dui")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlspi"]
+texture = ExtResource("6_u0qq4")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4g3w"]
+texture = ExtResource("8_3gnbp")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -16)
+
+[sub_resource type="TileSet" id="TileSet_3gnbp"]
+tile_shape = 1
+tile_layout = 4
+tile_size = Vector2i(64, 32)
+sources/0 = SubResource("TileSetAtlasSource_mlspi")
+sources/1 = SubResource("TileSetAtlasSource_j4g3w")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rbbuc"]
+texture = ExtResource("12_8o2ox")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qftrn"]
+texture = ExtResource("13_rbbuc")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -16)
+
+[sub_resource type="TileSet" id="TileSet_lfqh6"]
+tile_shape = 1
+tile_layout = 4
+tile_size = Vector2i(64, 32)
+sources/0 = SubResource("TileSetAtlasSource_rbbuc")
+sources/1 = SubResource("TileSetAtlasSource_qftrn")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfqh6"]
+texture = ExtResource("12_o8tlm")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -16)
+
+[sub_resource type="TileSet" id="TileSet_8o2ox"]
+tile_shape = 1
+tile_layout = 4
+tile_size = Vector2i(64, 32)
+sources/0 = SubResource("TileSetAtlasSource_lfqh6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3aq36"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="monde" type="Node2D"]
+script = ExtResource("1_471r3")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(0, -8)
+tile_map_data = PackedByteArray("AAAAAP//AwAAAAAAAAD/////AgAAAAAAAAD//wAAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAP7/AgAAAAAAAAD///7/AgAAAAAAAAD+//7/AwAAAAAAAAD+////AwAAAAAAAAD+/wAAAwAAAAAAAAD+/wEAAwAAAAAAAAD//wEAAwAAAAAAAAAAAAEAAwAAAAAAAAABAAEAAwAAAAAAAAABAAAAAgAAAAAAAAABAP//AgAAAAAAAAABAP7/AgAAAAAAAAACAAEAAwAAAAAAAAADAAEABAAAAAAAAAAEAAEABAAAAAAAAAAEAAAABAAAAAAAAAADAAAABAAAAAAAAAACAAAAAwAAAAAAAAACAP//AwAAAAAAAAADAP//BAAAAAAAAAAEAP//BAAAAAAAAAAEAP7/BAAAAAAAAAADAP7/BAAAAAAAAAACAP7/AwAAAAAAAAD+//3/AwAAAAAAAAD+//z/BAAAAAAAAAD+//v/BAAAAAAAAAD///v/BAAAAAAAAAD///z/BAAAAAAAAAAAAPz/BAAAAAAAAAAAAPv/BAAAAAAAAAAAAP3/AwAAAAAAAAD///3/AwAAAAAAAAABAP3/AwAAAAAAAAACAP3/AwAAAAAAAAACAPz/BAAAAAAAAAABAPz/BAAAAAAAAAABAPv/BAAAAAAAAAACAPv/BAAAAAAAAAADAPz/BAAAAAAAAAADAP3/BAAAAAAAAAADAPv/BAAAAAAAAAAEAPv/BAAAAAAAAAAEAPz/BAAAAAAAAAAEAP3/BAAAAAAAAAAEAAIABAAAAAAAAAAEAAMABAAAAAAAAAADAAMABAAAAAAAAAADAAIABAAAAAAAAAACAAIABAAAAAAAAAACAAMABAAAAAAAAAABAAMABAAAAAAAAAAAAAMABAAAAAAAAAD//wMABAAAAAAAAAD+/wMABAAAAAAAAAD+/wIABAAAAAAAAAAAAAIABAAAAAAAAAABAAIABAAAAAAAAAD//wIABAAAAAAAAAD9/wMABAAAAAAAAAD8/wMABAAAAAAAAAD8/wIABAAAAAAAAAD8/wEABAAAAAAAAAD8/wAABAAAAAAAAAD8////BAAAAAAAAAD9////BAAAAAAAAAD9//7/BAAAAAAAAAD9//3/BAAAAAAAAAD9//z/BAAAAAAAAAD9//v/BAAAAAAAAAD8//v/BAAAAAAAAAD8//z/BAAAAAAAAAD8//3/BAAAAAAAAAD8//7/BAAAAAAAAAD9/wIABAAAAAAAAAD9/wEABAAAAAAAAAD9/wAABAAAAAAAAAAGAPr/AQAAAAAAAAAGAPv/AQAAAAAAAAAGAPz/AQAAAAAAAAAGAP3/AQAAAAAAAAAGAP7/AQAAAAAAAAAGAPn/AQAAAAAAAAAFAPn/AQAAAAAAAAAEAPn/AQAAAAAAAAAEAPr/AQAAAAAAAAADAPr/AQAAAAAAAAACAPr/AQAAAAAAAAABAPr/AQAAAAAAAAAAAPr/AQAAAAAAAAABAPn/AQAAAAAAAAACAPn/AQAAAAAAAAADAPn/AQAAAAAAAAAFAPr/AQAAAAAAAAAFAPv/AQAAAAAAAAAFAPz/AQAAAAAAAAAFAP3/AQAAAAAAAAAFAP7/AQAAAAAAAAAFAP//AQAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAMAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAAAAQAAAAAAAAAGAP//AQAAAAAAAAD///r/AQAAAAAAAAD+//r/AQAAAAAAAAD9//r/AQAAAAAAAAD8//r/AQAAAAAAAAD9//n/AQAAAAAAAAD+//n/AQAAAAAAAAD///n/AQAAAAAAAAAAAPn/AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_kdubu")
+script = ExtResource("3_u0qq4")
+
+[node name="TileMap_Hover" type="TileMapLayer" parent="."]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(0, -8)
+tile_set = SubResource("TileSet_rj586")
+script = ExtResource("5_ehra8")
+
+[node name="TileMap_Action" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(0, -8)
+tile_set = SubResource("TileSet_3gnbp")
+script = ExtResource("7_fguuq")
+
+[node name="TileMap_Unit" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(0, -8)
+tile_map_data = PackedByteArray("AAD///7/AAAAAAAAAAD///3/AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_lfqh6")
+script = ExtResource("14_qftrn")
+
+[node name="TileMap_Building" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(0, -8)
+tile_set = SubResource("TileSet_8o2ox")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+script = ExtResource("10_3aq36")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Stats" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_right = 496.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3aq36")
+script = ExtResource("8_fguuq")
+
+[node name="Info" type="Label" parent="CanvasLayer/Stats"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 447.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 50
+
+[node name="SuivantPanel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -277.0
+offset_top = -150.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("14_mlspi")
+
+[node name="Suivant" type="Button" parent="CanvasLayer/SuivantPanel"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 278.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 100
+text = "Next"
+
+[node name="InfoGlobale" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -393.0
+offset_bottom = 163.0
+grow_horizontal = 0
+script = ExtResource("15_i37qo")
+
+[node name="Tour" type="Label" parent="CanvasLayer/InfoGlobale"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 1.0
+offset_right = 391.0
+offset_bottom = 163.0
+theme_override_font_sizes/font_size = 50
+
+[node name="BuildingPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_right = 496.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3aq36")
+script = ExtResource("17_2qu4f")
+
+[node name="Buildinglabel" type="Label" parent="CanvasLayer/BuildingPanel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 447.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 50
+
+[node name="Debug" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_top = 0.89000005
+anchor_right = 0.328
+anchor_bottom = 1.0
+offset_top = 0.27996826
+offset_right = 0.14398193
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3aq36")
+script = ExtResource("18_lfqh6")
+
+[node name="Label" type="Label" parent="CanvasLayer/Debug"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 447.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 50
+
+[node name="Passturn" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("16_i37qo")
+
+[node name="Rideau" type="ColorRect" parent="Passturn"]
+visible = false
+layout_mode = 0
+offset_left = -1187.0
+offset_top = -585.0
+offset_right = 1177.0
+offset_bottom = 653.0
+color = Color(0, 0, 0, 1)
+
+[node name="ButtonRideau" type="Button" parent="Passturn"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.4250001
+anchor_top = -0.82500005
+anchor_right = 1.6
+anchor_bottom = 0.90000004
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue"
+
+[node name="Label" type="Label" parent="Passturn"]
+layout_mode = 0
+offset_left = -120.0
+offset_top = -130.0
+offset_right = 120.0
+offset_bottom = -61.0
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="Management" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("19_2qu4f")
+
+[connection signal="pressed" from="CanvasLayer/SuivantPanel/Suivant" to="CanvasLayer/SuivantPanel" method="_on_button_pressed"]
+[connection signal="pressed" from="Passturn/ButtonRideau" to="Passturn" method="_on_button_rideau_pressed"]
