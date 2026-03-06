@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://y16xnkfdo73f"]
+
+[ext_resource type="Script" uid="uid://d306dhu7ebibh" path="res://menu/menu.gd" id="1_j0t7f"]
+[ext_resource type="Script" uid="uid://bribtqpdar8kd" path="res://menu/GameSettings.gd" id="2_g18jx"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j0t7f")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208
+anchor_top = 0.136
+anchor_right = 0.83300006
+anchor_bottom = 0.549
+offset_left = 0.3840027
+offset_top = -0.12800598
+offset_right = 0.38391113
+offset_bottom = 0.24798584
+theme_override_font_sizes/font_size = 100
+text = "Play"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27
+anchor_top = 0.64400005
+anchor_right = 0.5
+anchor_bottom = 0.67600006
+offset_left = -0.040008545
+offset_top = -10.312042
+offset_right = 5.0
+offset_bottom = 10.951965
+theme_override_font_sizes/font_size = 50
+text = "Number of players"
+
+[node name="SpinBox" type="SpinBox" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.53000003
+anchor_top = 0.588
+anchor_right = 0.68700004
+anchor_bottom = 0.74100006
+offset_left = 0.4399414
+offset_top = -0.023986816
+offset_right = -0.42407227
+offset_bottom = -0.16802979
+theme_override_constants/buttons_width = 100
+min_value = 2.0
+max_value = 4.0
+value = 2.0
+
+[node name="GameSettings" type="Node" parent="."]
+script = ExtResource("2_g18jx")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.386
+anchor_top = 0.78700006
+anchor_right = 0.64400005
+anchor_bottom = 0.92300004
+offset_left = 0.32800293
+offset_top = 0.023956299
+offset_right = 0.11193848
+offset_bottom = -2.104004
+theme_override_font_sizes/font_size = 50
+text = "Level Editor"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

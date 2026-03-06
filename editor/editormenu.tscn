@@ -1,0 +1,163 @@
+[gd_scene load_steps=10 format=3 uid="uid://bx06y5r0fmoqv"]
+
+[ext_resource type="Script" uid="uid://c4dyetdmkpym8" path="res://editor/editormenu.gd" id="1_h364v"]
+[ext_resource type="Texture2D" uid="uid://b0o3v177tkkrd" path="res://sprite/other/fond.png" id="2_hhm0l"]
+[ext_resource type="Script" uid="uid://djoh11qo3wmr8" path="res://editor/retour.gd" id="3_x7cnw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhm0l"]
+bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x7cnw"]
+bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av2h2"]
+bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2boo"]
+bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqfpe"]
+bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mayf"]
+bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[node name="Editormenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h364v")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hhm0l")
+expand_mode = 3
+
+[node name="Longeur" type="SpinBox" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.264
+anchor_top = 0.319
+anchor_right = 0.48400003
+anchor_bottom = 0.509
+offset_left = -0.12799072
+offset_top = 0.28799438
+offset_right = 0.4319458
+offset_bottom = 0.16799927
+theme_override_constants/buttons_width = 100
+theme_override_styles/up_background = SubResource("StyleBoxFlat_hhm0l")
+theme_override_styles/down_background = SubResource("StyleBoxFlat_x7cnw")
+value = 10.0
+
+[node name="Largeur" type="SpinBox" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.264
+anchor_top = 0.526
+anchor_right = 0.48400003
+anchor_bottom = 0.702
+offset_left = -0.12799072
+offset_top = 0.15197754
+offset_right = -0.5680542
+offset_bottom = 0.10397339
+tooltip_text = "Test
+"
+theme_override_constants/buttons_width = 100
+theme_override_styles/up_background = SubResource("StyleBoxFlat_av2h2")
+theme_override_styles/down_background = SubResource("StyleBoxFlat_m2boo")
+value = 10.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.69900006
+anchor_top = 0.71800005
+anchor_right = 0.96500003
+anchor_bottom = 0.93700004
+offset_left = -0.24804688
+offset_top = -0.2640381
+offset_right = 0.3199463
+offset_bottom = -0.17602539
+theme_override_font_sizes/font_size = 50
+text = "Generate"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25300002
+anchor_top = 0.46600002
+anchor_right = 0.407
+anchor_bottom = 0.597
+offset_left = -188.45602
+offset_top = -73.96802
+offset_right = -187.86401
+offset_bottom = -73.85599
+theme_override_font_sizes/font_size = 50
+text = "Width"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25100002
+anchor_top = 0.67
+anchor_right = 0.416
+anchor_bottom = 0.785
+offset_left = -188.15201
+offset_top = -74.16
+offset_right = -188.42401
+offset_bottom = -73.68002
+theme_override_font_sizes/font_size = 50
+text = "Height"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08400001
+anchor_top = 0.156
+anchor_right = 0.22200002
+anchor_bottom = 0.287
+offset_left = 0.23199463
+offset_top = -0.088005066
+offset_right = 0.25598145
+offset_bottom = 0.024002075
+theme_override_font_sizes/font_size = 100
+text = "Name:"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22500001
+anchor_top = 0.14400001
+anchor_right = 0.559
+anchor_bottom = 0.293
+offset_left = -0.2000122
+offset_top = -0.3120041
+offset_right = 0.031982422
+offset_bottom = 0.13598633
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_iqfpe")
+
+[node name="Retour" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.85200006
+anchor_right = 0.141
+anchor_bottom = 1.0
+offset_top = -0.0960083
+offset_right = -0.43200684
+grow_vertical = 0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_4mayf")
+text = "Back"
+script = ExtResource("3_x7cnw")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Retour" to="Retour" method="_on_pressed"]

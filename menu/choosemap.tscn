@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfbh30qd62k0b"]
+
+[ext_resource type="Script" uid="uid://ehcotx1ff2ck" path="res://menu/choosemap.gd" id="1_03y2o"]
+[ext_resource type="Texture2D" uid="uid://b0o3v177tkkrd" path="res://sprite/other/fond.png" id="2_gxied"]
+[ext_resource type="Script" uid="uid://dsc1yuo7x1cf0" path="res://menu/retour.gd" id="3_4dk3s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxied"]
+bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+
+[node name="Choosemap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_03y2o")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gxied")
+expand_mode = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0020001
+anchor_bottom = 1.003
+offset_right = -0.30407715
+offset_bottom = 0.05596924
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.71000004
+anchor_top = 0.82100004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.079956055
+offset_top = -0.0079956055
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_gxied")
+text = "New Map"
+
+[node name="Retour" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.85200006
+anchor_right = 0.141
+anchor_bottom = 1.0
+offset_top = -0.0960083
+offset_right = -0.43200684
+grow_vertical = 0
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_gxied")
+text = "Back"
+script = ExtResource("3_4dk3s")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Retour" to="Retour" method="_on_pressed"]
